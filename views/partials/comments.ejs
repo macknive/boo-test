@@ -17,11 +17,11 @@
     </div>
     
     <div id="comment-section">
-      <div class="createComment comment-box">
+      <div class="create-comment">
         <div class="row sqs-row">
           <img src="https://img.thedailybeast.com/image/upload/dpr_2.0/c_crop,h_1688,w_1688,x_694,y_0/c_limit,w_128/d_placeholder_euli9k,fl_lossy,q_auto/v1642795426/johnny_depp_zwjvzb" class="col sqs-col">
           <div class="col sqs-col">
-            <p class="name">Johnny</p>
+            <p class="name">Johnny Depp</p>
           </div>
         </div> 
         
@@ -33,21 +33,97 @@
         
         <div class="tags row sqs-row">
           <div class="tag-box col sqs-col">
-            <select name="cars" id="cars">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
+            <select>
+            <option>INFP</option>
+            <option>INFJ</option>
+            <option>ENFP</option>
+            <option>ENFJ</option>
+            <option>INTJ</option>
+            <option>INTP</option>
+            <option>ENTP</option>
+            <option>ENTJ</option>
+            <option>ISFP</option>
+            <option>ISFJ</option>
+            <option>ESFP</option>
+            <option>ESFJ</option>
+            <option value="">ISTP</option>
+            <option value="">ISTJ</option>
+            <option value="">ESTP</option>
+            <option value="">ESTJ</option>
           </select>
           </div>
-        
-          <div class="tag-box col sqs-col">
+       
+          <div class="tag-box col sqs-col wing">
+         
+            <select>
+              <option>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2</option>
+              <option>2w3</option>
+              <option>3w2</option>
+              <option>3w4</option>
+              <option>4w3</option>
+              <option>4w5</option>
+              <option>5w4</option>
+              <option>5w6</option>
+              <option>6w5</option>
+              <option>6w7</option>
+              <option>7w6</option>
+              <option>7w8</option>
+              <option value="">8w7</option>
+              <option value="">8w9</option>
+              <option value="">9w8</option>
+              <option value="">9w1</option>
+            </select>
             
           </div>
         
         
           <div class="tag-box col sqs-col">
-            
+            <select name="" id="">
+              <option>Aries</option>
+              <option>Taurus</option>
+              <option>Gemini</option>
+              <option>Cancer</option>
+              <option>Leo</option>
+              <option>Virgo</option>
+              <option>Libra</option>
+              <option>Scorpio</option>
+              <option>Sagittarius</option>
+              <option>Capricorn</option>
+              <option>Aquarius</option>
+              <option>Pisces</option>
+            </select>
+          </div>
+
+          <div class="tag-box col sqs-col fake">
+          <div class="dd-container">
+            <p>Radio buttons be can (and should) be hidden.</p>
+            <form class="space" action="">
+          
+              <input type="radio" id="item-1" name="item-1" value="Option One">
+              <input type="radio" id="item-2" name="item-1" value="Option Two">
+              <input type="radio" id="item-3" name="item-1" value="Option Three">
+              <input type="radio" id="item-4" name="item-1" value="Option Four">
+          
+          
+              <div class="select_box">
+                <span id="select-op-btn" class="default js-option">1 <img class="wing" src="https://i.ibb.co/G9mp8N6/wing.png">2</span>
+                <ul id="options" class="js-drop">
+                  <li>
+                    <label for="item-1" class="js-option">1 <img class="wing" src="https://i.ibb.co/G9mp8N6/wing.png"> 2 </label> 
+                  </li>
+                  <li>
+                    <label for="item-2" class="js-option">Option Two</label>
+                  </li>
+                  <li>
+                    <label for="item-3" class="js-option">Option Three</label>
+                  </li>
+                  <li>
+                    <label for="item-4" class="js-option">Option Four</label>
+                  </li>
+                </ul>
+              </div>
+            </form>
+          </div>
           </div>
         </div>
         
@@ -113,7 +189,7 @@ border: none;
   box-shadow: 0px 0px 10px #4EDCD8;
   color:  #FFFFFF
 }
-.comment-box {
+.comment-box, .create-comment {
 width: 100%;
 height: 100%;
 background: #FFFFFF;
@@ -123,10 +199,15 @@ padding: 30px;
 margin: 50px 0;
 }
 
-.comment-box img {
+.comment-box img, .create-comment img {
   border-radius: 50%;
   width: 100px;
   height: 100px;
+}
+
+.select_box img {
+  width: 20px;
+  height: 20px;
 }
 
 .comment-title {
@@ -146,6 +227,125 @@ border: none;
     resize: none;
 }
 
+select, .js-option {
+  width: 79.53px;
+height: 39.11px;
+background: #4EDCD8;
+border-radius: 50px;
+border: none;
+color: white;
+text-align: center;
+-webkit-appearance: none;
+  -moz-appearance: none;
+text-indent: 1px;
+  text-overflow: '';
+}
+
+.js-option {
+  border-radius: unset;
+}
+
+.wing select, .wing select option {
+ background-image:url('https://i.ibb.co/G9mp8N6/wing.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+
+}
+
+.wing {
+  margin-bottom: -3px;
+}
+
+.js-option {
+  width: 100px;
+}
+
+
+
+#select-op-btn {
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  height: unset;
+  width: 100px;
+  background-image: none !important;
+  border: none !important;
+}
+
+.tag-box {
+  margin-right: 12px;
+}
+
+
+/*fake drop down*/
+.dd-container {
+  width: 500px;
+  padding: 15px;
+  margin: 50px auto;
+}
+
+#select-op-btn {
+  border: 1px solid #F2F2F2;
+  display: block;
+  padding: 5px;
+  cursor: pointer;
+  background-image: url('https://i.imgur.com/K5gtkay.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.select_box {
+  box-sizing: border-box;
+  margin: 30px 0;
+}
+
+ul#options {
+  list-style-type: none;
+  font-size: 0px;
+  border-color: #F2F2F2;
+  border-style: solid;
+  border-width: 0px 1px 1px 1px;
+  padding: 0px 5px;
+}
+
+ul#options li label {
+  width: 100px;
+  font-size: 16px;
+  display: block;
+
+}
+
+ul#options li label:hover {
+  background-color: #1e90ff;
+}
+
+ul#options li {
+  
+  width: 112px;
+}
+
+
+.js-drop {
+  display: none;
+}
+
+.js-option {
+  display: inline-block;
+}
+
+label {
+  cursor: pointer;
+}
+
+.default{
+  color:#AAA;
+}
+
+.space{
+  padding:15px 0;
+}
+
+/*fake drop down end*/
 
 
 .no-comments {
@@ -171,7 +371,7 @@ line-height: 21px;
 letter-spacing: 0.05em;
 }
 
-.createComment {
+.create-comment {
   display: none;
 }
 
@@ -262,6 +462,21 @@ letter-spacing: 0.05em;
 }
 </style>
 
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+  integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
+<script>
+  $('input').on('change', function () {
+      $('#select-op-btn').html(this.checked ? this.value : '');
+      $('#select-op-btn').style.borderBottomRightRadius  = "0";
+      $('#select-op-btn').style.borderBottomLeftRadius  = "0";
+    });
+
+    $('.js-option').on('click', function () {
+      $("#options").toggleClass("js-drop");
+    });
+</script>
+
 <script>
 
 
@@ -290,9 +505,9 @@ let persons = [
   {
     id: 1,
     class: "c1",
-    name: 'Person 1',
+    name: 'Amber Heard',
     title: 'comment title 1',
-    image: 'https://soulverse.boo.world/images/1.png',
+    image: 'https://news.artnet.com/app/news-upload/2020/10/3663959-256x256.jpg',
     mbti: '',
     enneagram: '1w2',
     zodiac: '',
@@ -304,9 +519,9 @@ let persons = [
   {
     id: 2,
     class: "c2",
-    name: 'Person 2',
+    name: 'Elon Musk',
     title: 'comment title 2',
-    image: 'https://soulverse.boo.world/images/1.png',
+    image: 'https://cachedimages.podchaser.com/256x256/aHR0cHM6Ly9jcmVhdG9yLWltYWdlcy5wb2RjaGFzZXIuY29tL2RmODZjM2RjZTg5ZDI2ZGQzZWI5NWU4YzI1MDBhMTIyLmpwZWc%3D/aHR0cHM6Ly93d3cucG9kY2hhc2VyLmNvbS9pbWFnZXMvbWlzc2luZy1pbWFnZS5wbmc%3D',
     mbti: 'ISFJ',
     enneagram: '2w3',
     zodiac: '',
@@ -318,9 +533,9 @@ let persons = [
   {
     id: 3,
     class: "c3",
-    name: 'Person 3',
+    name: 'Cara Delevingne',
     title: 'comment title 3',
-    image: 'https://soulverse.boo.world/images/1.png',
+    image: 'https://pbs.twimg.com/profile_images/647770064804941824/7fkUyIfK_400x400.jpg',
     mbti: 'ENFP',
     enneagram: '',
     zodiac: '',
@@ -373,10 +588,10 @@ function clear() {
   document.querySelector(".no-comments").style.display = "none";
 }
 
-
 var currentValue = "all"
 var currentResult = "all"
 function loadComments(value) {
+  document.querySelector(".create-comment").style.display = "none";
   clear()
   
   var result = "all"
@@ -482,7 +697,7 @@ function render(currentSort) {
 }
 
   function displayVote() {
-    document.querySelector(".createComment").style.display = "block";
+    document.querySelector(".create-comment").style.display = "block";
   }
 
 
