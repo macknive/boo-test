@@ -1,0 +1,524 @@
+<div>
+  <div class="flex">
+    <div class="comments">Comments</div>
+    <button class="vote" onclick="displayVote()">VOTE/COMMENT</button>
+  </div>
+  <div>
+    <div id="filters">
+      <a class="filter activeLink" onclick="loadComments('all')">All</a>
+      <a class="filter" onclick="loadComments('mbti')">MBTI</a>
+      <a class="filter" onclick="loadComments('enneagram')">Enneagram</a>
+      <a class="filter" onclick="loadComments('zodiac')">Zodiac</a>
+    </div>
+  
+    <div class="toggles">
+      <button class="toggleButton activeToggle best" onclick="showBest()">best</button>
+      <button class="toggleButton recent" onclick="showRecent()">recent</button>
+    </div>
+    
+    <div id="comment-section">
+      <div class="createComment comment-box">
+        <div class="row sqs-row">
+          <img src="https://img.thedailybeast.com/image/upload/dpr_2.0/c_crop,h_1688,w_1688,x_694,y_0/c_limit,w_128/d_placeholder_euli9k,fl_lossy,q_auto/v1642795426/johnny_depp_zwjvzb" class="col sqs-col">
+          <div class="col sqs-col">
+            <p class="name">Johnny</p>
+          </div>
+        </div> 
+        
+        <div class="comment-content">
+          <div class="comment-description">
+            <textarea class="comment-title" rows="2" cols="50">Title</textarea>
+          </div>
+        </div>
+        
+        <div class="tags row sqs-row">
+          <div class="tag-box col sqs-col">
+            <select name="cars" id="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select>
+          </div>
+        
+          <div class="tag-box col sqs-col">
+            
+          </div>
+        
+        
+          <div class="tag-box col sqs-col">
+            
+          </div>
+        </div>
+        
+        <div class="comment-content">
+          <textarea class="comment-write" rows="5" cols="50">Comment Here</textarea>
+        </div>
+        
+      
+      </div>
+      <div class="no-comments">No Data Found</div>
+      <div class="loader"></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+</div>
+
+
+
+<style scoped>
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.vote {
+  width: 245px;
+height: 60px;
+color: white;
+background: #4EDCD8;
+border-radius: 50px;
+border: none;
+}
+.toggles {
+  margin-top: 20px;
+}
+#filters {
+  margin-top: 24px;
+}
+#filters a {
+  padding: 12px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.05em;
+}
+.activeLink, a:hover {
+  color: #4EDCD8;
+}
+.toggleButton, .activeToggle {
+  width: 88px;
+  height: 42px;
+  border: none;
+  border-radius: 50px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+.activeToggle {
+  background: #4EDCD8;
+  box-shadow: 0px 0px 10px #4EDCD8;
+  color:  #FFFFFF
+}
+.comment-box {
+width: 100%;
+height: 100%;
+background: #FFFFFF;
+box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+border-radius: 50px;
+padding: 30px;
+margin: 50px 0;
+}
+
+.comment-box img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.comment-title {
+font-weight: 700;
+font-size: 24px;
+line-height: 28px;
+letter-spacing: 0.05em;
+margin-top: 20px;
+border: none;
+    outline: none;
+    resize: none;
+}
+
+.comment-write {
+  border: none;
+    outline: none;
+    resize: none;
+}
+
+
+
+.no-comments {
+  display: none;
+  left: 50%;
+  right: 50%;
+  margin-top: 10%;
+  position: relative;
+}
+
+.name {
+font-weight: 400;
+font-size: 18px;
+line-height: 21px;
+letter-spacing: 0.05em;
+margin-left: 12px;
+}
+
+.comment-content {
+  font-weight: 400;
+font-size: 18px;
+line-height: 21px;
+letter-spacing: 0.05em;
+}
+
+.createComment {
+  display: none;
+}
+
+.liked {
+  color: #4EDCD8 !important;
+}
+
+.not-liked {
+  color: #6B6A6A;
+}
+
+.loader  {
+  animation: rotate 2s infinite;  
+  height: 50px;
+  width: 50px;
+  display: none;
+  left: 50%;
+  right: 50%;
+  margin-top: 10%;
+  position: relative;
+}
+
+.loader:before,
+.loader:after {   
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: 20px;  
+  width: 20px;
+}
+.loader:before {
+  animation: ball1 1s infinite;  
+  background-color: #cb2025;
+  box-shadow: 30px 0 0 #f8b334;
+  margin-bottom: 10px;
+}
+.loader:after {
+  animation: ball2 1s infinite; 
+  background-color: #00a096;
+  box-shadow: 30px 0 0 #97bf0d;
+}
+
+@keyframes rotate {
+  0% { 
+    -webkit-transform: rotate(0deg) scale(0.8); 
+    -moz-transform: rotate(0deg) scale(0.8);
+  }
+  50% { 
+    -webkit-transform: rotate(360deg) scale(1.2); 
+    -moz-transform: rotate(360deg) scale(1.2);
+  }
+  100% { 
+    -webkit-transform: rotate(720deg) scale(0.8); 
+    -moz-transform: rotate(720deg) scale(0.8);
+  }
+}
+
+@keyframes ball1 {
+  0% {
+    box-shadow: 30px 0 0 #f8b334;
+  }
+  50% {
+    box-shadow: 0 0 0 #f8b334;
+    margin-bottom: 0;
+    -webkit-transform: translate(15px,15px);
+    -moz-transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #f8b334;
+    margin-bottom: 10px;
+  }
+}
+
+@keyframes ball2 {
+  0% {
+    box-shadow: 30px 0 0 #97bf0d;
+  }
+  50% {
+    box-shadow: 0 0 0 #97bf0d;
+    margin-top: -20px;
+    -webkit-transform: translate(15px,15px);
+    -moz-transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #97bf0d;
+    margin-top: 0;
+  }
+}
+</style>
+
+<script>
+
+
+
+let filterContainer = document.getElementById("filters");
+let filterButtons = filterContainer.getElementsByClassName("filter");
+for (let i = 0; i < filterButtons.length; i++) {
+  filterButtons[i].addEventListener("click", function () {
+    let current = document.getElementsByClassName("activeLink");
+    current[0].className = current[0].className.replace(" activeLink", "");
+    this.className += " activeLink";
+  });
+} 
+
+// function loader(passedFilter) {
+//   document.querySelector(".loader").style.display = "block";
+//   let loading = setTimeout(function() {
+//     document.querySelector(".loader").style.display = "none";
+//     passedFilter()
+//   }, 1000)
+// }
+
+
+
+let persons = [
+  {
+    id: 1,
+    class: "c1",
+    name: 'Person 1',
+    title: 'comment title 1',
+    image: 'https://soulverse.boo.world/images/1.png',
+    mbti: '',
+    enneagram: '1w2',
+    zodiac: '',
+    likes: '23',
+    comment: 'This is a comment',
+    likeStatus: false,
+    date: "2022-05-25"
+  },
+  {
+    id: 2,
+    class: "c2",
+    name: 'Person 2',
+    title: 'comment title 2',
+    image: 'https://soulverse.boo.world/images/1.png',
+    mbti: 'ISFJ',
+    enneagram: '2w3',
+    zodiac: '',
+    likes: '42',
+    comment: 'This is a comment 2',
+    likeStatus: false,
+    date: "2022-05-28"
+  },
+  {
+    id: 3,
+    class: "c3",
+    name: 'Person 3',
+    title: 'comment title 3',
+    image: 'https://soulverse.boo.world/images/1.png',
+    mbti: 'ENFP',
+    enneagram: '',
+    zodiac: '',
+    likes: '68',
+    comment: 'This is a comment 3',
+    likeStatus: false,
+    date: "2022-05-27"
+  },
+]
+
+let target = document.getElementById("comment-section")
+
+function compareLikes(a, b) {
+  if (a.likes < b.likes) {
+    return 1;
+  }
+  if (a.likes > b.likes) {
+    return -1;
+  }
+  return 0;
+}
+
+function compareDates(a, b) {
+  if (a.date < b.date) {
+    return 1;
+  }
+  if (a.date > b.date) {
+    return -1;
+  }
+  return 0;
+}
+
+  // let sortBest = persons.sort(compareLikes);
+  // let sortRecent = persons.sort(compareDates);
+
+
+
+  // let sortBest = persons.sort(function (a, b) {
+  //     return a.likes.localeCompare(b.likes)
+  //   });
+  // let sortRecent = persons.sort(compareDates);
+
+function clear() {
+  let commentBox = document.querySelectorAll(".comment-box");
+  if (commentBox) {
+    commentBox.forEach(box => {
+      box.remove();
+    });
+  }
+  document.querySelector(".no-comments").style.display = "none";
+}
+
+
+var currentValue = "all"
+var currentResult = "all"
+function loadComments(value) {
+  clear()
+  
+  var result = "all"
+  currentValue = value
+  if(currentValue !="all") {
+    result = persons.filter(obj => {
+    return obj[value] != '';
+  })
+  } else {
+    result = persons
+  }
+  currentResult = result
+  document.querySelector(".loader").style.display = "block";
+  setTimeout(function () {
+    document.querySelector(".loader").style.display = "none";
+    render(result)
+  } , 1000)
+}
+
+function showBest() {
+  loadComments(currentValue)
+  document.querySelector(".recent").classList.remove("activeToggle");
+  document.querySelector(".best").classList.add("activeToggle");
+  document.querySelector(".loader").style.display = "block";
+  setTimeout(function () {
+    clear()
+    document.querySelector(".loader").style.display = "none";
+    render(currentResult.sort(compareLikes))
+  } , 1000)
+  
+  
+}
+
+function showRecent() {
+  loadComments(currentValue)
+  document.querySelector(".best").classList.remove("activeToggle");
+  document.querySelector(".recent").classList.add("activeToggle");
+  document.querySelector(".loader").style.display = "block";
+  setTimeout(function () {
+    clear()
+    document.querySelector(".loader").style.display = "none";
+    render(currentResult.sort(compareDates))
+  }, 1000)
+}
+  
+// function load(value) {
+//   document.querySelector(".loader").style.display = "block";
+//   clear()
+//   setTimeout(function () {
+//     document.querySelector(".loader").style.display = "none";
+//       render(value)
+//   } , 1000)
+// }
+
+
+
+function render(currentSort) {
+  if(currentSort.length === 0) {
+    document.querySelector(".no-comments").style.display = "block";
+  }
+  for (person = 0; person < currentSort.length; person++) {
+  let newDiv = document.createElement("div");
+  newDiv.className = "comment-box";
+  newDiv.innerHTML = `
+    <div class="row sqs-row">
+      <img src="${currentSort[person].image}" class="col sqs-col">
+        <div class="col sqs-col"><p class="name">${currentSort[person].name}</p></div>
+    </div>
+
+    <div class="comment-content">
+      <div class="comment-description"><p class="comment-title">${currentSort[person].title}</p></div>
+    </div>
+
+    <div class="tags row sqs-row">
+      <div class="tag-box col sqs-col">
+        <p class="tag-text">${currentSort[person].mbti}</p>
+      </div>
+
+      <div class="tag-box col sqs-col">
+        <p class="tag-text">${currentSort[person].enneagram}</p>
+      </div>
+      
+
+      <div class="tag-box col sqs-col">
+        <p class="tag-text">${currentSort[person].zodiac}</p>
+      </div>
+    </div>
+
+    <div class="comment-content">
+      ${currentSort[person].comment}
+    </div>
+
+    <div class="likes">
+      <div class="like-box row sqs-row"">
+        <a onclick="like(${currentSort[person].id})" class="${currentSort[person].likeStatus ? 'liked' : 'not-liked'} col sqs-col" style="margin: 16px 12px 0 0; color: #6B6A6A">&#10084;</a>
+        <p id="${currentSort[person].class}" class="like-count col sqs-col">${currentSort[person].likes}</p>
+        <div class="col sqs-col"><p class="name">${currentSort[person].date}</p></div>
+      </div>
+    </div>
+  `
+  target.appendChild(newDiv);
+ }
+}
+
+  function displayVote() {
+    document.querySelector(".createComment").style.display = "block";
+  }
+
+
+
+
+function like(id) {
+  objIndex = persons.findIndex((obj => obj.id == id))
+  let data = document.getElementById(persons[objIndex].class)
+  let sibling = data.previousElementSibling;
+  persons[objIndex].likeStatus = !persons[objIndex].likeStatus
+  if (persons[objIndex].likeStatus) {
+    persons[objIndex].likes++
+    sibling.style.color = "#4EDCD8";
+  } else {
+    persons[objIndex].likes--
+    sibling.style.color = "#6B6A6A";
+    sibling.classList.remove("liked");
+  }
+  data.innerHTML = persons[objIndex].likes
+}
+
+
+
+
+
+
+
+
+  // <div class="tags">
+  //   <select class="select-tag">
+  //     <option value="">Select a Tag</option>
+  //     <option value="mbti">MBTI</option>
+  //     <option value="enneagram">Enneagram</option>
+  //     <option value="zodiac">Zodiac</option>
+  //   </select>
+  // </div>
+
+  render(persons.sort(compareLikes))
+</script>
