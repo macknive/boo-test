@@ -24,7 +24,7 @@
             <p class="name">Johnny Depp</p>
           </div>
         </div> 
-        <!-- form -->
+
         <form id="createComment">
           <div class="comment-content">
             <div class="comment-description">
@@ -54,7 +54,7 @@
               <option value="ESTJ">ESTJ</option>
             </select>
             </div>
-         
+          
             <div class="tag-box col sqs-col fake">
         
                 <!-- <form class="space" action=""> -->
@@ -104,8 +104,7 @@
                 <!-- </form> -->
             
             </div>
-          
-          
+            
             <div class="tag-box col sqs-col zodiac-last">
               <select id="zodiac-form selection" class="op-30 op3" onclick="changeOpacity('op3')">
                 <option value="" selected disabled hidden class="default-value">Zodiac</option>
@@ -123,8 +122,6 @@
                 <option value="Pisces">Pisces</option>
               </select>
             </div>
-  
-        
           </div>
           
           <div class="comment-content">
@@ -132,8 +129,7 @@
           </div>
           <img class="submit-btn" onclick="submitForm()" src="https://i.ibb.co/tC18VL6/Image-from-i-OS-5.png"><br>
         </form>
-        
- 
+
       </div>
       <div class="no-comments">No Data Found</div>
       <div class="loader"></div>
@@ -141,28 +137,19 @@
   </div>
 </div>
 
-
-
-
-</div>
-
-
-
 <style scoped>
 .flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-
 .vote {
   width: 245px;
-height: 60px;
-color: white;
-background: #4EDCD8;
-border-radius: 50px;
-border: none;
+  height: 60px;
+  color: white;
+  background: #4EDCD8;
+  border-radius: 50px;
+  border: none;
 }
 .toggles {
   margin-top: 20px;
@@ -194,26 +181,19 @@ border: none;
   color:  #FFFFFF
 }
 .comment-box, .create-comment {
-width: 100%;
-height: 100%;
-background: #FFFFFF;
-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
-border-radius: 50px;
-padding: 30px;
-margin: 50px 0;
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  padding: 30px;
+  margin: 50px 0;
 }
-
 .comment-box img, .create-comment img {
   border-radius: 50%;
   width: 100px;
   height: 100px;
 }
-
-/* .select_box img {
-  width: 20px;
-  height: 20px;
-} */
-
 .comment-title, #title-form {
 font-weight: 700;
 font-size: 24px;
@@ -224,34 +204,31 @@ border: none;
   outline: none;
   resize: none;
 }
-
 .comment-write, #write-form {
   border: none;
     outline: none;
     resize: none;
 }
-
 select, .js-option {
   width: 79.53px;
-height: 39.11px;
-background: #4EDCD8;
-border-radius: 50px;
-border: none;
-color: black;
-text-align: center;
--webkit-appearance: none;
+  height: 39.11px;
+  background: #4EDCD8;
+  border-radius: 50px;
+  border: none;
+  color: black;
+  text-align: center;
+  -webkit-appearance: none;
   -moz-appearance: none;
-text-indent: 1px;
-  text-overflow: '';
+  text-indent: 1px;
+    text-overflow: '';
 }
 
 .mbti-tag {
   width: 80px;
-background: #4EDCD8;
-border-radius: 50px;
-text-align: center;
+  background: #4EDCD8;
+  border-radius: 50px;
+  text-align: center;
 }
-
 .enneagram-tag {
   width: 80px;
   border-radius: 50px;
@@ -259,25 +236,19 @@ text-align: center;
   background: #13A6A2;
   color: white;
 }
-
 .op3, .zodiac-tag {
   background: url("https://i.ibb.co/Yb7L4QD/space.png");
   background-color: #100d44;
   color: white;
 }
-
 .zodiac-tag {
   width: 80px;
   text-align: center;
   border-radius: 50px;
 }
-
 #write-form, .comment-content {
   margin-top: 24px;
 }
-
-
-
 .op-30 {
   opacity: 0.3
 }
@@ -285,28 +256,20 @@ text-align: center;
   border-radius: unset;
   background: #13A6A2;
 }
-
 .radio {
 display: none;
 }
-
 .wing {
   margin-bottom: -3px;
   height: 20px !important;
   width: 20px !important;
 }
-
 .js-option {
   width: 100px;
 }
-
 .tag-box {
   margin-right: 12px;
 }
-
-
-
-/*fake drop down*/
 #select-op-btn {
   border-radius: 50px;
   height: unset;
@@ -315,14 +278,6 @@ display: none;
   padding: 5px;
   cursor: pointer;
 }
-
-
-
-/* .select_box {
-  box-sizing: border-box;
-  margin: 30px 0;
-} */
-
 ul#options {
   list-style-type: none;
   font-size: 0px;
@@ -333,54 +288,41 @@ ul#options {
   position: absolute;
   
 }
-
 ul#options li label {
   width: 110px;
   font-size: 16px;
   display: block;
 }
-
 .last {
   border-radius: 0px 0px 20px 20px;
 }
-
 ul#options li label:hover {
   background-color: #1e90ff;
 }
-
 ul#options li {
-  
   width: 112px;
 }
-
 .js-drop {
   display: none;
 }
-
 .js-option {
   display: inline-block;
 }
-
 label {
   cursor: pointer;
 }
-
 .default{
   color:#AAA;
 }
-
 .space{
   padding:15px 0;
 }
-
-/*fake drop down end*/
-
 .submit-btn {
   cursor: pointer;
   width: 40px !important;
-height: 29px !important;
-float: right;
-padding-bottom: 24px;
+  height: 29px !important;
+  float: right;
+  padding-bottom: 24px;
 }
 
 .no-comments {
@@ -390,34 +332,29 @@ padding-bottom: 24px;
   margin-top: 10%;
   position: relative;
 }
-
 .name {
-font-weight: 400;
-font-size: 18px;
-line-height: 21px;
-letter-spacing: 0.05em;
-margin-left: 12px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.05em;
+  margin-left: 12px;
 }
 
 .comment-content {
   font-weight: 400;
-font-size: 18px;
-line-height: 21px;
-letter-spacing: 0.05em;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.05em;
 }
-
 .create-comment {
   display: none;
 }
-
 .liked {
   color: #4EDCD8 !important;
 }
-
 .not-liked {
   color: #6B6A6A;
 }
-
 .loader  {
   animation: rotate 2s infinite;  
   height: 50px;
@@ -428,7 +365,6 @@ letter-spacing: 0.05em;
   margin-top: 10%;
   position: relative;
 }
-
 .loader:before,
 .loader:after {   
   border-radius: 50%;
@@ -448,7 +384,6 @@ letter-spacing: 0.05em;
   background-color: #00a096;
   box-shadow: 30px 0 0 #97bf0d;
 }
-
 @keyframes rotate {
   0% { 
     -webkit-transform: rotate(0deg) scale(0.8); 
@@ -463,7 +398,6 @@ letter-spacing: 0.05em;
     -moz-transform: rotate(720deg) scale(0.8);
   }
 }
-
 @keyframes ball1 {
   0% {
     box-shadow: 30px 0 0 #f8b334;
@@ -479,7 +413,6 @@ letter-spacing: 0.05em;
     margin-bottom: 10px;
   }
 }
-
 @keyframes ball2 {
   0% {
     box-shadow: 30px 0 0 #97bf0d;
@@ -495,7 +428,6 @@ letter-spacing: 0.05em;
     margin-top: 0;
   }
 }
-
 @media only screen and (max-width: 720px) { 
   html body {
     overflow-x: hidden;
@@ -529,8 +461,6 @@ letter-spacing: 0.05em;
   .loader {
     left: 45%;
   }
-
-
 }
 </style>
 
@@ -538,6 +468,7 @@ letter-spacing: 0.05em;
   integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 
 <script>
+  //changing the styling of the fake dropdown
   var flag = true;
   function changeOpacity(value) {
     document.querySelector("." + value).classList.remove("op-30")
@@ -547,9 +478,11 @@ letter-spacing: 0.05em;
     fakeDrop.style.borderRadius = flag ? "20px 20px 0 0" : "50px";
     flag = !flag;
   }
+  //replace the value and put wings image
   function replaceValue(ids, fn, sn) {
     document.getElementById(ids).value = fn +" <img class='wing' src='https://i.ibb.co/G9mp8N6/wing.png'> " + sn;
   }
+  //make a fake dropdown using external library since the image is not supported in dropdown
   $('input').on('change', function () {
       $('#select-op-btn').html(this.checked ? this.value : '');
       document.getElementById("select-op-btn").style.borderRadius = "50px";
@@ -559,13 +492,10 @@ letter-spacing: 0.05em;
     $('.js-option').on('click', function () {
       $("#options").toggleClass("js-drop");
     });
-
 </script>
 
 <script>
-
-
-
+//add styling to the main filters
 let filterContainer = document.getElementById("filters");
 let filterButtons = filterContainer.getElementsByClassName("filter");
 for (let i = 0; i < filterButtons.length; i++) {
@@ -575,17 +505,7 @@ for (let i = 0; i < filterButtons.length; i++) {
     this.className += " activeLink";
   });
 } 
-
-// function loader(passedFilter) {
-//   document.querySelector(".loader").style.display = "block";
-//   let loading = setTimeout(function() {
-//     document.querySelector(".loader").style.display = "none";
-//     passedFilter()
-//   }, 1000)
-// }
-
-
-
+//generate fake data
 var persons = [
   {
     id: 1,
@@ -633,6 +553,7 @@ var persons = [
 
 let target = document.getElementById("comment-section")
 
+//sort by likes and date
 function compareLikes(a, b) {
   if (a.likes < b.likes) {
     return 1;
@@ -653,16 +574,7 @@ function compareDates(a, b) {
   return 0;
 }
 
-  // let sortBest = persons.sort(compareLikes);
-  // let sortRecent = persons.sort(compareDates);
-
-
-
-  // let sortBest = persons.sort(function (a, b) {
-  //     return a.likes.localeCompare(b.likes)
-  //   });
-  // let sortRecent = persons.sort(compareDates);
-
+//clear the data
 function clear() {
   let commentBox = document.querySelectorAll(".comment-box");
   if (commentBox) {
@@ -672,13 +584,13 @@ function clear() {
   }
   document.querySelector(".no-comments").style.display = "none";
 }
-
+//set a state management variable to watch the changes
 var currentValue = "all"
 var currentResult = "all"
+//main function to load comments
 function loadComments(value) {
   document.querySelector(".create-comment").style.display = "none";
   clear()
-  
   var result = "all"
   currentValue = value
   if(currentValue !="all") {
@@ -695,7 +607,7 @@ function loadComments(value) {
     render(result)
   } , 1000)
 }
-
+//fetch comments and sort it by number of likes and dates
 function showBest() {
   loadComments(currentValue)
   document.querySelector(".recent").classList.remove("activeToggle");
@@ -706,8 +618,6 @@ function showBest() {
     document.querySelector(".loader").style.display = "none";
     render(currentResult.sort(compareLikes))
   } , 1000)
-  
-  
 }
 
 function showRecent() {
@@ -721,18 +631,7 @@ function showRecent() {
     render(currentResult.sort(compareDates))
   }, 1000)
 }
-  
-// function load(value) {
-//   document.querySelector(".loader").style.display = "block";
-//   clear()
-//   setTimeout(function () {
-//     document.querySelector(".loader").style.display = "none";
-//       render(value)
-//   } , 1000)
-// }
-
-
-
+//main rendering function to display comments on the screen  
 function render(currentSort) {
   if(currentSort.length === 0) {
     document.querySelector(".no-comments").style.display = "block";
@@ -759,7 +658,6 @@ function render(currentSort) {
         ${currentSort[person].enneagram}
       </div>
       
-
       <div class="tag-box col sqs-col zod ${currentSort[person].zodiac ? 'zodiac-tag' : ''}">
         ${currentSort[person].zodiac}
       </div>
@@ -780,13 +678,10 @@ function render(currentSort) {
  }
 }
 
-  function displayVote() {
-    document.querySelector(".create-comment").style.display = "block";
-  }
-
-
-
-
+function displayVote() {
+  document.querySelector(".create-comment").style.display = "block";
+}
+//like function to add likes and stlye heart icon
 function like(id) {
   objIndex = persons.findIndex((obj => obj.id == id))
   let data = document.getElementById(persons[objIndex].class)
@@ -802,9 +697,7 @@ function like(id) {
   }
   data.innerHTML = persons[objIndex].likes
 }
-
-
-
+//add data to the fake data object
 function submitForm() {
   console.log("submitting")
   let newObject
@@ -841,9 +734,7 @@ function submitForm() {
   persons.push(newObject)
   console.log(persons.length)
   showRecent()
-
 }
-
-
-  render(persons.sort(compareLikes))
+//render comments on page load
+render(persons.sort(compareLikes))
 </script>
