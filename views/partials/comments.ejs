@@ -1,9 +1,9 @@
 <div>
   <div class="flex">
-    <div class="comments">Comments</div>
+    <h3>Comments</h3>
     <button class="vote" onclick="displayVote()">VOTE/COMMENT</button>
   </div>
-  <div>
+  <div class="main-container">
     <div id="filters">
       <a class="filter activeLink" onclick="loadComments('all')">All</a>
       <a class="filter" onclick="loadComments('mbti')">MBTI</a>
@@ -24,114 +24,116 @@
             <p class="name">Johnny Depp</p>
           </div>
         </div> 
-        
-        <div class="comment-content">
-          <div class="comment-description">
-            <textarea class="comment-title" rows="2" cols="50">Title</textarea>
+        <!-- form -->
+        <form id="createComment">
+          <div class="comment-content">
+            <div class="comment-description">
+              <textarea id="title-form" rows="2" cols="20">Title</textarea>
+            </div>
           </div>
-        </div>
-        
-        <div class="tags row sqs-row">
-          <div class="tag-box col sqs-col">
-            <select>
-            <option>INFP</option>
-            <option>INFJ</option>
-            <option>ENFP</option>
-            <option>ENFJ</option>
-            <option>INTJ</option>
-            <option>INTP</option>
-            <option>ENTP</option>
-            <option>ENTJ</option>
-            <option>ISFP</option>
-            <option>ISFJ</option>
-            <option>ESFP</option>
-            <option>ESFJ</option>
-            <option value="">ISTP</option>
-            <option value="">ISTJ</option>
-            <option value="">ESTP</option>
-            <option value="">ESTJ</option>
-          </select>
-          </div>
-       
-          <div class="tag-box col sqs-col wing">
+          
+          <div class="tags row sqs-row">
+            <div class="tag-box col sqs-col">
+              <select id="mbti-form selection" class="op-30 op1" onclick="changeOpacity('op1')">
+              <option value="" selected disabled hidden class="default-value">MBTI</option>
+              <option value="INFP">INFP</option>
+              <option value="INFJ">INFJ</option>
+              <option value="ENFP">ENFP</option>
+              <option value="ENFJ">ENFJ</option>
+              <option value="INTJ">INTJ</option>
+              <option value="INTP">INTP</option>
+              <option value="ENTP">ENTP</option>
+              <option value="ENTJ">ENTJ</option>
+              <option value="ISFP">ISFP</option>
+              <option value="ISFJ">ISFJ</option>
+              <option value="ESFP">ESFP</option>
+              <option value="ESFJ">ESFJ</option>
+              <option value="ISTP">ISTP</option>
+              <option value="ISTJ">ISTJ</option>
+              <option value="ESTP">ESTP</option>
+              <option value="ESTJ">ESTJ</option>
+            </select>
+            </div>
          
-            <select>
-              <option>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2</option>
-              <option>2w3</option>
-              <option>3w2</option>
-              <option>3w4</option>
-              <option>4w3</option>
-              <option>4w5</option>
-              <option>5w4</option>
-              <option>5w6</option>
-              <option>6w5</option>
-              <option>6w7</option>
-              <option>7w6</option>
-              <option>7w8</option>
-              <option value="">8w7</option>
-              <option value="">8w9</option>
-              <option value="">9w8</option>
-              <option value="">9w1</option>
-            </select>
+            <div class="tag-box col sqs-col fake">
+        
+                <!-- <form class="space" action=""> -->
+                  <input type="radio" class="radio" id="item-0" name="radioValue" value="" checked="checked">
+                  <input type="radio" class="radio" id="item-1" name="radioValue" value="1" onclick="replaceValue('item-1', '1', '2')">
+                  <input type="radio" class="radio" id="item-2" name="radioValue" value="2" onclick="replaceValue('item-2', '2', '3')">
+                  <input type="radio" class="radio" id="item-3" name="radioValue" value="3" onclick="replaceValue('item-3', '3', '2')">
+                  <input type="radio" class="radio" id="item-4" name="radioValue" value="4" onclick="replaceValue('item-4', '3', '4')">
+                  <input type="radio" class="radio" id="item-5" name="radioValue" value="5" onclick="replaceValue('item-5', '4', '3')">
+                  <input type="radio" class="radio" id="item-6" name="radioValue" value="6" onclick="replaceValue('item-6', '4', '5')">
+                  <input type="radio" class="radio" id="item-7" name="radioValue" value="7" onclick="replaceValue('item-7', '5', '4')">
+                  <input type="radio" class="radio" id="item-8" name="radioValue" value="8" onclick="replaceValue('item-8', '5', '6')">
+                  <input type="radio" class="radio" id="item-9" name="radioValue" value="9" onclick="replaceValue('item-9', '6', '5')">
+                  <input type="radio" class="radio" id="item-10" name="radioValue" value="10" onclick="replaceValue('item-10', '6', '7')">
+                  <input type="radio" class="radio" id="item-11" name="radioValue" value="11" onclick="replaceValue('item-11', '7', '6')">
+                  <input type="radio" class="radio" id="item-12" name="radioValue" value="12" onclick="replaceValue('item-12', '7', '8')">
+                  <input type="radio" class="radio" id="item-13" name="radioValue" value="13" onclick="replaceValue('item-13', '8', '7')">
+                  <input type="radio" class="radio" id="item-14" name="radioValue1" value="14" onclick="replaceValue('item-14', '8', '9')">
+                  <input type="radio" class="radio" id="item-15" name="radioValue" value="15" onclick="replaceValue('item-15', '9', '8')">
+                  <input type="radio" class="radio" id="item-16" name="radioValue" value="16" onclick="replaceValue('item-16', '9', '1')">
+              
             
-          </div>
-        
-        
-          <div class="tag-box col sqs-col">
-            <select name="" id="">
-              <option>Aries</option>
-              <option>Taurus</option>
-              <option>Gemini</option>
-              <option>Cancer</option>
-              <option>Leo</option>
-              <option>Virgo</option>
-              <option>Libra</option>
-              <option>Scorpio</option>
-              <option>Sagittarius</option>
-              <option>Capricorn</option>
-              <option>Aquarius</option>
-              <option>Pisces</option>
-            </select>
-          </div>
+            
+                  <div class="select_box">
+                    <span id="select-op-btn" class="default js-option op-30 op2" onclick="changeBorder();changeOpacity('op2')" onblur="revertBorder()">Enneagram</span>
+                    <ul id="options" class="js-drop">
+                      <li><label for="item-1" class="js-option">1 <img class="wing" src="https://i.ibb.co/G9mp8N6/wing.png"> 2</label></li>
+                      <li><label for="item-2" class="js-option">2 <img class="wing" src="https://i.ibb.co/G9mp8N6/wing.png"> 3</label></li>
+                      <li><label for="item-3" class="js-option">3 <img class="wing" src="https://i.ibb.co/G9mp8N6/wing.png"> 2</label></li>
+                      <li><label for="item-4" class="js-option">3 <img class="wing" src="https://i.ibb.co/G9mp8N6/wing.png"> 4</label></li>
+                      <li><label for="item-5" class="js-option">4 <img class="wing" src="https://i.ibb.co/G9mp8N6/wing.png"> 3</label></li>
+                      <li><label for="item-6" class="js-option">4 <img class="wing" src="https://i.ibb.co/G9mp8N6/wing.png"> 5</label></li>
+                      <li><label for="item-7" class="js-option">5 <img class="wing" src="https://i.ibb.co/G9mp8N6/wing.png"> 4</label></li>
+                      <li><label for="item-8" class="js-option">5 <img class="wing" src="https://i.ibb.co/G9mp8N6/wing.png"> 6</label></li>
+                      <li><label for="item-9" class="js-option">6 <img class="wing" src="https://i.ibb.co/G9mp8N6/wing.png"> 5</label></li>
+                      <li><label for="item-10" class="js-option">6 <img class="wing" src="https://i.ibb.co/G9mp8N6/wing.png"> 7</label></li>
+                      <li><label for="item-11" class="js-option">7 <img class="wing" src="https://i.ibb.co/G9mp8N6/wing.png"> 6</label></li>
+                      <li><label for="item-12" class="js-option">7 <img class="wing" src="https://i.ibb.co/G9mp8N6/wing.png"> 8</label></li>
+                      <li><label for="item-13" class="js-option">8 <img class="wing" src="https://i.ibb.co/G9mp8N6/wing.png"> 7</label></li>
+                      <li><label for="item-14" class="js-option">8 <img class="wing" src="https://i.ibb.co/G9mp8N6/wing.png"> 9</label></li>
+                      <li><label for="item-15" class="js-option">9 <img class="wing" src="https://i.ibb.co/G9mp8N6/wing.png"> 8</label></li>
+                      <li><label for="item-16" class="js-option last">9 <img class="wing" src="https://i.ibb.co/G9mp8N6/wing.png"> 1</label></li>
+                    </ul>
+                  </div>
 
-          <div class="tag-box col sqs-col fake">
-          <div class="dd-container">
-            <p>Radio buttons be can (and should) be hidden.</p>
-            <form class="space" action="">
-          
-              <input type="radio" id="item-1" name="item-1" value="Option One">
-              <input type="radio" id="item-2" name="item-1" value="Option Two">
-              <input type="radio" id="item-3" name="item-1" value="Option Three">
-              <input type="radio" id="item-4" name="item-1" value="Option Four">
+                  
+                <!-- </form> -->
+            
+            </div>
           
           
-              <div class="select_box">
-                <span id="select-op-btn" class="default js-option">1 <img class="wing" src="https://i.ibb.co/G9mp8N6/wing.png">2</span>
-                <ul id="options" class="js-drop">
-                  <li>
-                    <label for="item-1" class="js-option">1 <img class="wing" src="https://i.ibb.co/G9mp8N6/wing.png"> 2 </label> 
-                  </li>
-                  <li>
-                    <label for="item-2" class="js-option">Option Two</label>
-                  </li>
-                  <li>
-                    <label for="item-3" class="js-option">Option Three</label>
-                  </li>
-                  <li>
-                    <label for="item-4" class="js-option">Option Four</label>
-                  </li>
-                </ul>
-              </div>
-            </form>
-          </div>
-          </div>
-        </div>
+            <div class="tag-box col sqs-col zodiac-last">
+              <select id="zodiac-form selection" class="op-30 op3" onclick="changeOpacity('op3')">
+                <option value="" selected disabled hidden class="default-value">Zodiac</option>
+                <option value="Aries">Aries</option>
+                <option value="Taurus">Taurus</option>
+                <option value="Gemini">Gemini</option>
+                <option value="Cancer">Cancer</option>
+                <option value="Leo">Leo</option>
+                <option value="Virgo">Virgo</option>
+                <option value="Libra">Libra</option>
+                <option value="Scorpio">Scorpio</option>
+                <option value="Sagittarius">Sagittarius</option>
+                <option value="Capricorn">Capricorn</option>
+                <option value="Aquarius">Aquarius</option>
+                <option value="Pisces">Pisces</option>
+              </select>
+            </div>
+  
         
-        <div class="comment-content">
-          <textarea class="comment-write" rows="5" cols="50">Comment Here</textarea>
-        </div>
+          </div>
+          
+          <div class="comment-content">
+            <textarea id="write-form" rows="5" cols="35">Comment Here</textarea>
+          </div>
+          <img class="submit-btn" onclick="submitForm()" src="https://i.ibb.co/tC18VL6/Image-from-i-OS-5.png"><br>
+        </form>
         
-      
+ 
       </div>
       <div class="no-comments">No Data Found</div>
       <div class="loader"></div>
@@ -152,6 +154,8 @@
   justify-content: space-between;
   align-items: center;
 }
+
+
 .vote {
   width: 245px;
 height: 60px;
@@ -205,23 +209,23 @@ margin: 50px 0;
   height: 100px;
 }
 
-.select_box img {
+/* .select_box img {
   width: 20px;
   height: 20px;
-}
+} */
 
-.comment-title {
+.comment-title, #title-form {
 font-weight: 700;
 font-size: 24px;
 line-height: 28px;
 letter-spacing: 0.05em;
 margin-top: 20px;
 border: none;
-    outline: none;
-    resize: none;
+  outline: none;
+  resize: none;
 }
 
-.comment-write {
+.comment-write, #write-form {
   border: none;
     outline: none;
     resize: none;
@@ -233,7 +237,7 @@ height: 39.11px;
 background: #4EDCD8;
 border-radius: 50px;
 border: none;
-color: white;
+color: black;
 text-align: center;
 -webkit-appearance: none;
   -moz-appearance: none;
@@ -241,35 +245,59 @@ text-indent: 1px;
   text-overflow: '';
 }
 
-.js-option {
-  border-radius: unset;
+.mbti-tag {
+  width: 80px;
+background: #4EDCD8;
+border-radius: 50px;
+text-align: center;
 }
 
-.wing select, .wing select option {
- background-image:url('https://i.ibb.co/G9mp8N6/wing.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 20px;
+.enneagram-tag {
+  width: 80px;
+  border-radius: 50px;
+  text-align: center;
+  background: #13A6A2;
+  color: white;
+}
 
+.op3, .zodiac-tag {
+  background: url("https://i.ibb.co/Yb7L4QD/space.png");
+  background-color: #100d44;
+  color: white;
+}
+
+.zodiac-tag {
+  width: 80px;
+  text-align: center;
+  border-radius: 50px;
+}
+
+#write-form, .comment-content {
+  margin-top: 24px;
+}
+
+
+
+.op-30 {
+  opacity: 0.3
+}
+.js-option {
+  border-radius: unset;
+  background: #13A6A2;
+}
+
+.radio {
+display: none;
 }
 
 .wing {
   margin-bottom: -3px;
+  height: 20px !important;
+  width: 20px !important;
 }
 
 .js-option {
   width: 100px;
-}
-
-
-
-#select-op-btn {
-  border-top-right-radius: 50px;
-  border-top-left-radius: 50px;
-  height: unset;
-  width: 100px;
-  background-image: none !important;
-  border: none !important;
 }
 
 .tag-box {
@@ -277,27 +305,23 @@ text-indent: 1px;
 }
 
 
-/*fake drop down*/
-.dd-container {
-  width: 500px;
-  padding: 15px;
-  margin: 50px auto;
-}
 
+/*fake drop down*/
 #select-op-btn {
-  border: 1px solid #F2F2F2;
-  display: block;
+  border-radius: 50px;
+  height: unset;
+  width: 100px;
+  color: white;
   padding: 5px;
   cursor: pointer;
-  background-image: url('https://i.imgur.com/K5gtkay.png');
-  background-repeat: no-repeat;
-  background-position: right center;
 }
 
-.select_box {
+
+
+/* .select_box {
   box-sizing: border-box;
   margin: 30px 0;
-}
+} */
 
 ul#options {
   list-style-type: none;
@@ -305,14 +329,19 @@ ul#options {
   border-color: #F2F2F2;
   border-style: solid;
   border-width: 0px 1px 1px 1px;
-  padding: 0px 5px;
+  margin-left: -1px;
+  position: absolute;
+  
 }
 
 ul#options li label {
-  width: 100px;
+  width: 110px;
   font-size: 16px;
   display: block;
+}
 
+.last {
+  border-radius: 0px 0px 20px 20px;
 }
 
 ul#options li label:hover {
@@ -323,7 +352,6 @@ ul#options li {
   
   width: 112px;
 }
-
 
 .js-drop {
   display: none;
@@ -347,6 +375,13 @@ label {
 
 /*fake drop down end*/
 
+.submit-btn {
+  cursor: pointer;
+  width: 40px !important;
+height: 29px !important;
+float: right;
+padding-bottom: 24px;
+}
 
 .no-comments {
   display: none;
@@ -460,21 +495,71 @@ letter-spacing: 0.05em;
     margin-top: 0;
   }
 }
+
+@media only screen and (max-width: 720px) { 
+  html body {
+    overflow-x: hidden;
+  }
+  .comment-box, .create-comment {
+    max-width: 315px;
+    padding: 16px 20px;
+    text-align: left;
+  }
+  .comment-box img {
+    height: 70px;
+  }
+  .main-container {
+    padding: 12px;
+    text-align: center;
+  }
+  .mbti-tag, .zodiac-tag, .enneagram-tag {
+    padding: 2px 20px;
+  }
+  .sqs-col:last-child {
+    padding-right: 20px;
+  }
+  .zodiac-last {
+    padding-right: 0px !important;
+  }
+  .vote {
+    width: 150px;
+    height: 50px;
+    margin-right: 20px;
+  }
+  .loader {
+    left: 45%;
+  }
+
+
+}
 </style>
 
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
   integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 
 <script>
+  var flag = true;
+  function changeOpacity(value) {
+    document.querySelector("." + value).classList.remove("op-30")
+  }
+  function changeBorder() {
+    let fakeDrop = document.getElementById("select-op-btn")
+    fakeDrop.style.borderRadius = flag ? "20px 20px 0 0" : "50px";
+    flag = !flag;
+  }
+  function replaceValue(ids, fn, sn) {
+    document.getElementById(ids).value = fn +" <img class='wing' src='https://i.ibb.co/G9mp8N6/wing.png'> " + sn;
+  }
   $('input').on('change', function () {
       $('#select-op-btn').html(this.checked ? this.value : '');
-      $('#select-op-btn').style.borderBottomRightRadius  = "0";
-      $('#select-op-btn').style.borderBottomLeftRadius  = "0";
+      document.getElementById("select-op-btn").style.borderRadius = "50px";
+      flag = !flag;
     });
 
     $('.js-option').on('click', function () {
       $("#options").toggleClass("js-drop");
     });
+
 </script>
 
 <script>
@@ -501,7 +586,7 @@ for (let i = 0; i < filterButtons.length; i++) {
 
 
 
-let persons = [
+var persons = [
   {
     id: 1,
     class: "c1",
@@ -509,10 +594,10 @@ let persons = [
     title: 'comment title 1',
     image: 'https://news.artnet.com/app/news-upload/2020/10/3663959-256x256.jpg',
     mbti: '',
-    enneagram: '1w2',
+    enneagram: '',
     zodiac: '',
     likes: '23',
-    comment: 'This is a comment',
+    comment: 'I am innocent',
     likeStatus: false,
     date: "2022-05-25"
   },
@@ -523,10 +608,10 @@ let persons = [
     title: 'comment title 2',
     image: 'https://cachedimages.podchaser.com/256x256/aHR0cHM6Ly9jcmVhdG9yLWltYWdlcy5wb2RjaGFzZXIuY29tL2RmODZjM2RjZTg5ZDI2ZGQzZWI5NWU4YzI1MDBhMTIyLmpwZWc%3D/aHR0cHM6Ly93d3cucG9kY2hhc2VyLmNvbS9pbWFnZXMvbWlzc2luZy1pbWFnZS5wbmc%3D',
     mbti: 'ISFJ',
-    enneagram: '2w3',
+    enneagram: "5 <img class='wing' src='https://i.ibb.co/G9mp8N6/wing.png'> 6",
     zodiac: '',
     likes: '42',
-    comment: 'This is a comment 2',
+    comment: "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum",
     likeStatus: false,
     date: "2022-05-28"
   },
@@ -537,10 +622,10 @@ let persons = [
     title: 'comment title 3',
     image: 'https://pbs.twimg.com/profile_images/647770064804941824/7fkUyIfK_400x400.jpg',
     mbti: 'ENFP',
-    enneagram: '',
-    zodiac: '',
+    enneagram: "9 <img class='wing' src='https://i.ibb.co/G9mp8N6/wing.png'> 1",
+    zodiac: 'Aries',
     likes: '68',
-    comment: 'This is a comment 3',
+    comment: 'It was fun',
     likeStatus: false,
     date: "2022-05-27"
   },
@@ -666,17 +751,17 @@ function render(currentSort) {
     </div>
 
     <div class="tags row sqs-row">
-      <div class="tag-box col sqs-col">
-        <p class="tag-text">${currentSort[person].mbti}</p>
+      <div class="tag-box col sqs-col ${currentSort[person].mbti ? 'mbti-tag' : ''}">
+        ${currentSort[person].mbti}
       </div>
 
-      <div class="tag-box col sqs-col">
-        <p class="tag-text">${currentSort[person].enneagram}</p>
+      <div class="tag-box col sqs-col ${currentSort[person].enneagram ? 'enneagram-tag' : ''}">
+        ${currentSort[person].enneagram}
       </div>
       
 
-      <div class="tag-box col sqs-col">
-        <p class="tag-text">${currentSort[person].zodiac}</p>
+      <div class="tag-box col sqs-col zod ${currentSort[person].zodiac ? 'zodiac-tag' : ''}">
+        ${currentSort[person].zodiac}
       </div>
     </div>
 
@@ -688,7 +773,6 @@ function render(currentSort) {
       <div class="like-box row sqs-row"">
         <a onclick="like(${currentSort[person].id})" class="${currentSort[person].likeStatus ? 'liked' : 'not-liked'} col sqs-col" style="margin: 16px 12px 0 0; color: #6B6A6A">&#10084;</a>
         <p id="${currentSort[person].class}" class="like-count col sqs-col">${currentSort[person].likes}</p>
-        <div class="col sqs-col"><p class="name">${currentSort[person].date}</p></div>
       </div>
     </div>
   `
@@ -721,19 +805,45 @@ function like(id) {
 
 
 
+function submitForm() {
+  console.log("submitting")
+  let newObject
+  let newRadio
+  let mbti = document.getElementById("mbti-form selection")
+  let zodiac = document.getElementById("zodiac-form selection");
+  let radio = document.querySelector('input[name="radioValue"]:checked').value;
+  let title = document.getElementById("title-form");
+  let comment = document.getElementById("write-form");
+  if(!radio) {
+    newRadio = ''
+  } else {
+    newRadio = radio
+  }
+  console.log(newRadio)
+  console.log(mbti.value)
+  console.log(zodiac.value)
+  console.log(title.value)
+  console.log(comment.value)
 
+  newObject = {
+    id: persons.length + 1,
+    image: 'https://img.thedailybeast.com/image/upload/dpr_2.0/c_crop,h_1688,w_1688,x_694,y_0/c_limit,w_128/d_placeholder_euli9k,fl_lossy,q_auto/v1642795426/johnny_depp_zwjvzb',
+    name: "Johnny Depp",
+    title: title.value,
+    comment: comment.value,
+    mbti: mbti.value,
+    enneagram: newRadio,
+    zodiac: zodiac.value,
+    likes: 0,
+    likeStatus: false,
+    date: new Date().toLocaleString()
+  }
+  persons.push(newObject)
+  console.log(persons.length)
+  showRecent()
 
+}
 
-
-
-  // <div class="tags">
-  //   <select class="select-tag">
-  //     <option value="">Select a Tag</option>
-  //     <option value="mbti">MBTI</option>
-  //     <option value="enneagram">Enneagram</option>
-  //     <option value="zodiac">Zodiac</option>
-  //   </select>
-  // </div>
 
   render(persons.sort(compareLikes))
 </script>
